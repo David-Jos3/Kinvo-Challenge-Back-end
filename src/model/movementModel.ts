@@ -20,7 +20,7 @@ const findTransactions = async (
 
   /*
    * Para o sql não me retornar o erro  'Incorrect arguments to to mysqld_stmt_execute' precisei
-   * converter o meu 'limits' e 'offSet' em um string
+   * converter o meu 'limits' e 'offSet' em uma string
    */
 }
 
@@ -63,7 +63,13 @@ const update = async (
 }
 
 const deleteById = async (userId: number) => {
-  await conn.execute('DELETE FROM transactions WHERE user_id=?', [userId])
+  try {
+    await conn.execute('DELETE FROM transactions WHERE user_id=?', [userId])
+    await conn.execute('DELETE FROM users WHERE id=?', [userId])
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
 }
 
 const getBalance = async (userId: number) => {
