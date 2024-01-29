@@ -13,12 +13,12 @@
   - **Bcrypt** (para criptografia de senhas)
   - **JWT** (para autenticação)
     
-  ##Controle de Movimentações Financeiras
+  ## Controle de Movimentações Financeiras
   - Inserção, atualização e exclusão de movimentações financeiras
   - Consulta de movimentações filtradas por data e paginadas
   - Visualização do saldo da conta
     
-  ##Gerenciamento de Usuários
+  ## Gerenciamento de Usuários
   - Atualização de informações do perfil do usuário
   - Exclusão de conta de usuário
 
@@ -35,7 +35,6 @@
   ### Exclusão de Usuário
   - Endpoint: `DELETE /users/:userId`
     Responsável por excluir um usuário específico.
-
   ## Rotas Movimentações Financeiras
   ### Listar Todas as Movimentações
   - Endpoint: `GET /movement`
